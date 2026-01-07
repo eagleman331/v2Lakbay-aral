@@ -3,7 +3,7 @@
 
 import { Drawer } from 'expo-router/drawer';
 
-export default function Layout() {
+export default function TabLayout() {
   return (
     <Drawer>
       <Drawer.Screen
