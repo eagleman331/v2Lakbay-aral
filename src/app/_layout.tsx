@@ -1,22 +1,5 @@
-
-
-
-
-
-
-// import '../../global.css';
-
-// import { Stack } from 'expo-router';
-// import { StatusBar } from 'expo-status-bar';
+import '../../global.css';
 // import Purchases from 'react-native-purchases';
-// import { GestureHandlerRootView } from 'react-native-gesture-handler';
-// import { useEffect } from 'react';
-
-// export default function Layout() {
-//   return <Stack />;
-// }
-
-
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -39,6 +22,6 @@ export default function RootLayout() {
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
       <StatusBar style="auto" />
-</GestureHandlerRootView>
+    </GestureHandlerRootView>
   );
 }
