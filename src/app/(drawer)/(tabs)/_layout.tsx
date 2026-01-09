@@ -14,16 +14,6 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
       }}>
-
-      
-      {/* <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-        }}
-      /> */}
-     {/* <Tabs.Screen name="index" options={{ href: null, headerShown: false }} /> */}
-
      <Tabs.Screen
         name="(tour)"
         options={{
@@ -35,7 +25,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="(rcdg)"
+        name="(rotc)"
         options={{
           title: 'ROTC',
           headerShown: false,
@@ -44,6 +34,7 @@ export default function TabLayout() {
           ),
         }}
       />
+          <Tabs.Screen name="(Commander)" options={{ href: null, headerShown: false }} />
     </Tabs>
   );
 }

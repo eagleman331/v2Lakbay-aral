@@ -9,9 +9,14 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   ScrollView,
-  SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
+import {
+  SafeAreaView,
+  SafeAreaProvider,
+  SafeAreaInsetsContext,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
 import React, { useRef } from 'react';
 // import LottieView from 'lottie-react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';

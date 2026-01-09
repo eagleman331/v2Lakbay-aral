@@ -14,13 +14,13 @@ import Colors from '@/src/assets/constant/Colors';
 
 import { IconsCampTour } from '@/src/assets/DataApp/CampTourSpots';
 import { FlatCategories } from '@/src/components/CampTourMarquee';
+import Separator from '@/src/components/Separator';
 
 export default function TouristHomeScreen() {
   const { width, height } = useWindowDimensions();
 
   return (
     <>
-      {/* <Stack.Screen options={{ title: 'Tab One' }} /> */}
       <View className="flex-1" style={{ backgroundColor: Colors.darkGreen }}>
         {/* <Image
           className="absolute left-0 top-0 h-full w-full"
@@ -30,13 +30,14 @@ export default function TouristHomeScreen() {
           <View className=" ml-5 mt-16" style={{ height: height * 0.05 }}>
             <Text className="text-4xl font-bold text-neutral-50">Camp Tour- RESCOM</Text>
           </View>
-          {/* <Divider
-            inset={true}
-            insetType="right"
-            width={1}
-            color="white"
-            style={{ marginTop: 2, marginLeft: 10 }}
-          /> */}
+          <View
+            style={{
+              height: 1.3,
+              backgroundColor: 'white',
+              width: width * 0.7,
+              left: width * 0.05,
+            }}
+          />
           {/* Container of category of places */}
           <View className=" mt-3 items-center" style={{ height: height * 0.8 }}>
             <FlatList

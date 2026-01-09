@@ -15,7 +15,7 @@ export const RotcSchoolsList = ({ item }) => {
       onPressIn={() => (scale.value = withSpring(0.9, { damping: 5, stiffness: 150 }))} // Press effect
       onPressOut={() => (scale.value = withSpring(1, { damping: 5, stiffness: 150 }))} // Release effect
       onPress={() =>
-        router.push({ pathname: '/(drawer)/(tabs)/(rcdg)/RotcDetailScreen', params: item })
+        router.push({ pathname: '/(drawer)/(tabs)/(rotc)/RotcDetailScreen', params: item })
       } 
     >
       <Animated.View

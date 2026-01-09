@@ -1,7 +1,7 @@
 import { View, Text, Pressable, useWindowDimensions } from 'react-native';
 import React, { useRef } from 'react';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
-// import LottieView from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 import { router } from 'expo-router';
 
 const MapLottieButton = ({pathDist, itemData}) => {
@@ -16,8 +16,8 @@ const MapLottieButton = ({pathDist, itemData}) => {
     <Pressable
       onPressIn={() => (scale.value = withSpring(0.9, { damping: 5, stiffness: 150 }))}
       onPressOut={() => (scale.value = withSpring(1, { damping: 5, stiffness: 150 }))}
-      onPress={() =>
-        router.push({ pathname: pathDist, params: itemData })}
+      // onPress={() =>
+      //   router.push({ pathname: pathDist, params: itemData })}
     >
       <Animated.View
         className="w-1/5 justify-center rounded-2xl border-amber-400"
@@ -29,7 +29,7 @@ const MapLottieButton = ({pathDist, itemData}) => {
           },
         ]}>
         <View style={{ alignItems: 'center' }}>
-          {/* <LottieView
+          <LottieView
             autoPlay
             ref={animation}
             style={{
@@ -37,7 +37,7 @@ const MapLottieButton = ({pathDist, itemData}) => {
               height: 160,
             }}
             source={require('../../../src/assets/lottie/MapGoogle.json')}
-          /> */}
+          />
         </View>
       </Animated.View>
     </Pressable>
