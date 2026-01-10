@@ -110,7 +110,19 @@ const CustomDrawerContent = (props) => {
 export default function DrawerLayout() {
   return (
     <Drawer drawerContent={CustomDrawerContent}>
-      <Drawer.Screen
+
+       <Drawer.Screen
+        name="loginScreen"
+        options={{
+          headerTitle: 'Login',
+          headerShown: false,
+          drawerLabel: 'Login',
+          drawerIcon: ({ size, color }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
+        }}
+      />
+            <Drawer.Screen
         name="(tabs)" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Home',

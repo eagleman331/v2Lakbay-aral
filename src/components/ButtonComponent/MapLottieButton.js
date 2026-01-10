@@ -16,8 +16,8 @@ const MapLottieButton = ({pathDist, itemData}) => {
     <Pressable
       onPressIn={() => (scale.value = withSpring(0.9, { damping: 5, stiffness: 150 }))}
       onPressOut={() => (scale.value = withSpring(1, { damping: 5, stiffness: 150 }))}
-      // onPress={() =>
-      //   router.push({ pathname: pathDist, params: itemData })}
+      onPress={() =>
+        router.push({ pathname: pathDist, params: itemData })}
     >
       <Animated.View
         className="w-1/5 justify-center rounded-2xl border-amber-400"

@@ -36,7 +36,7 @@ const SiteDetails = () => {
   return (
     <>
       <View className="flex-1 bg-slate-300">
-        <View className="h-2/5 w-full bg-red-500">
+        <View className="h-2/5 w-full">
           <Image
             className=" h-full w-full object-contain drop-shadow-xl"
             source={params.imageFacility}
@@ -69,7 +69,7 @@ const SiteDetails = () => {
             <Text className="font-bold">Aminities</Text>
             <Text className="ml-2 mt-2 font-light">{params.Aminities}</Text>
           </View>
-          {/* <View className="mt-10 flex-row" style={{ justifyContent: 'space-around' }}>
+          <View className="mt-10 flex-row" style={{ justifyContent: 'space-around' }}>
             <Pressable
               onPressIn={() => (scale.value = withSpring(0.9, { damping: 5, stiffness: 150 }))}
               onPressOut={() => (scale.value = withSpring(1, { damping: 5, stiffness: 150 }))}
@@ -97,7 +97,7 @@ const SiteDetails = () => {
               </Animated.View>
             </Pressable>
             <MapLottieButton pathDist="/(drawer)/(tabs)/(tour)/SiteCategory" itemData={params} />
-          </View> */}
+          </View>
         </View>
       </View>
     </>

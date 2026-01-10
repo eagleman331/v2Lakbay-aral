@@ -53,20 +53,20 @@ const SiteCategory = () => {
       ? 'AIzaSyD2vd0xYzrKHixVMCqIWSvIJgQwrcqI9IE'
       : PROVIDER_GOOGLE;
 
-  // useEffect(() => {
-  //   async function getCurrentLocation() {
-  //     let { status } = await Location.requestForegroundPermissionsAsync();
-  //     if (status !== 'granted') {
-  //       setErrorMsg('Permission to access location was denied');
-  //       return;
-  //     }
+  useEffect(() => {
+    async function getCurrentLocation() {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
 
-  //     let location = await Location.getCurrentPositionAsync({});
-  //     setLocation(location);
-  //   }
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    }
 
-  //   getCurrentLocation();
-  // }, []);
+    getCurrentLocation();
+  }, []);
 
   // useEffect(() => {
   //   (async () => {
@@ -94,11 +94,12 @@ const SiteCategory = () => {
   //   const deltaSeconds = (frameInfo.timeSincePreviousFrame ?? 0) / 1000;
   // //  console.log('deltaSeconds', deltaSeconds)
   // });
-
+console.log('location', location);
   return (
     <View style={{ flex: 1 }}>
       {/* <View style={{backgroundColor:'red', width, height:height*.15}}></View> */}
       <MapView
+          apikey={"AIzaSyD2vd0xYzrKHixVMCqIWSvIJgQwrcqI9IE"}
         style={{ height: '100%', width: '100%' }}
         initialRegion={{
           longitude: 121.36279850956352,
@@ -106,7 +107,10 @@ const SiteCategory = () => {
           latitudeDelta: 0.0031,
           longitudeDelta: 0.0031,
         }}>
-        {location ? (
+
+
+          
+        {/* {location ? (
           <Marker coordinate={location} title="Tourist" description="Current Location">
             <View>
               <LottieView
@@ -121,9 +125,9 @@ const SiteCategory = () => {
               />
             </View>
           </Marker>
-        ) : null}
+        ) : null} */}
 
-        <Marker
+        {/* <Marker
           coordinate={{
             latitude: Number(params.latitude),
             longitude: Number(params.longitude),
@@ -133,7 +137,7 @@ const SiteCategory = () => {
           title="Target Destination"
           description="Target Desc"
           mapType="mutedStandard"
-        />
+        /> */}
         {/* <Marker
           coordinate={{
             latitude: 14.541445082627884,
@@ -155,7 +159,7 @@ const SiteCategory = () => {
             />
           </View>
         </Marker> */}
-        {location ? (
+        {/* {location ? (
           <MapViewDirections
             origin={location}
             destination={{ latitude: Number(params.latitude), longitude: Number(params.longitude) }}
@@ -184,7 +188,7 @@ const SiteCategory = () => {
               console.log('polyline tapped');
             }}
           />
-        ) : null}
+        ) : null} */}
       </MapView>
       <BottomSheet
         ref={sheetRef}

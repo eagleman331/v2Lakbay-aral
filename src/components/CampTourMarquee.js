@@ -3,6 +3,7 @@ import { Image, Pressable, StyleSheet, Text, useWindowDimensions, View } from 'r
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import Colors from '../assets/constant/Colors';
 
+
 export const FlatCategories = ({ item }) => {
   const router = useRouter();
   const { width, height } = useWindowDimensions();

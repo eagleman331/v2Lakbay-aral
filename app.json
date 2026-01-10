@@ -14,7 +14,7 @@
       "favicon": "./src/assets/favicon.png"
     },
     "plugins": [
-       [
+      [
         "expo-build-properties",
         {
           "android": {
@@ -34,7 +34,10 @@
           "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
         }
       ],
-      "expo-build-properties"
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-firebase/crashlytics",
+      "expo-video"
     ],
     "experiments": {
       "typedRoutes": true,
@@ -53,9 +56,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.eagleman33.lakbayaral"
+      "bundleIdentifier": "com.eagleman33.lakbayaral",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "blockedPermissions": [
         "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
       ],
@@ -63,7 +68,12 @@
         "foregroundImage": "./src/assets/lakbay-aralIcon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.eagleman33.lakbayaral"
+      "package": "com.eagleman33.lakbayaral",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAql_lhkfFzAyHoXJ1lvXjrjzlREj4v17c"
+        }
+      }
     },
     "extra": {
       "router": {},
