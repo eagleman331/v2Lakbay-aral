@@ -4,36 +4,43 @@ import Colors from '../../assets/constant/Colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import LottieView from 'lottie-react-native';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from '@react-native-firebase/auth';
 
 const loginScreen = () => {
   const [text, onChangeText] = useState('Password');
+  const [userEmail, onChangeEmail] = useState('UserEmail');
   const [userName, onChangeNumber] = useState('UserName');
   const { width, height } = useWindowDimensions();
   const router = useRouter();
   const animation = useRef(null);
-  //   const auth = getAuth();
-  //   const SignInEmail = () => {
 
-  //     signInWithEmailAndPassword(auth, 'warren@gmail.com', 'password')
-  //       .then((userCredential) => {
-  //         // Signed in
-  //         const user = userCredential.user;
-  //         // ...
-  //       })
-  //       .catch((error) => {
-  //         const errorCode = error.code;
-  //         const errorMessage = error.message;
-  //       });
-  //   };
+  const auth = getAuth();
+  const SignInEmail = () => {
+    signInWithEmailAndPassword(auth, 'warren35@gmail.com', '123456')
+      .then((userCredential) => {
+        // Signed in
+        console.log('User signed in!');
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  };
 
-  //   const handleLogin = async (email, password) => {
-  //   try {
-  //     await signInWithEmailAndPassword(auth, 'warren@gmail.com', 'password');
-  //     console.log("User logged in!");
-  //   } catch (error) {
-  //     console.error("Error logging in:", error.message);
-  //   }
-  // };
+  const handleLogin = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, 'warren35@gmail.com', '123456');
+   
+    } catch (error) {
+      console.error('Error logging in:', error.message);
+    }
+  };
 
   return (
     <SafeAreaView className="flex-1 " style={{ backgroundColor: Colors.darkGreen }}>
@@ -96,19 +103,26 @@ const loginScreen = () => {
               onPressIn={() => onChangeText('')}
             />
           </View>
-          <View
-            style={{
-              backgroundColor: Colors.turbo,
-              height: 50,
-              width: width * 0.8,
-              marginLeft: 10,
-              borderRadius: 20,
-              justifyContent: 'center',
-              alignItems: 'center',
-              alignSelf: 'center',
+          <TouchableOpacity
+            onPress={() => {
+              SignInEmail();
+              console.log('Login pressed');
+               router.replace('/(drawer)/(tabs)/(rotc)/RotcSchoolScreen');
             }}>
-            <Text>Login</Text>
-          </View>
+            <View
+              style={{
+                backgroundColor: Colors.turbo,
+                height: 50,
+                width: width * 0.8,
+                marginLeft: 10,
+                borderRadius: 20,
+                justifyContent: 'center',
+                alignItems: 'center',
+                alignSelf: 'center',
+              }}>
+              <Text>Login</Text>
+            </View>
+          </TouchableOpacity>
 
           <View>
             <Text style={{ color: 'white', alignSelf: 'center', padding: 20 }}>Or</Text>

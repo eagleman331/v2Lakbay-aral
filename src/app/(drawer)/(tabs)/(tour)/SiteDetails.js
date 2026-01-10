@@ -9,19 +9,21 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
 } from 'react-native';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import LottieView from 'lottie-react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { router, useLocalSearchParams } from 'expo-router';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import MapLottieButton from '@/src/components/ButtonComponent/MapLottieButton';
 import Colors from '@/src/assets/constant/Colors';
-import Separator from '@/src/components/Separator';
+import * as Location from 'expo-location';
 
 const SiteDetails = () => {
   const { width, height } = useWindowDimensions();
   const params = useLocalSearchParams(); // Retrieves query params
   const animation = useRef(null);
+  const [location, setLocation] = useState(null);
+    const [errorMsg, setErrorMsg] = useState(null);
 
   const scale = useSharedValue(1);
   const animatedStyle = useAnimatedStyle(() => ({
@@ -32,6 +34,21 @@ const SiteDetails = () => {
     latitude: params.latitude,
     longitude: params.longitude,
   };
+
+   useEffect(() => {
+      async function getCurrentLocation() {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          setErrorMsg('Permission to access location was denied');
+          return;
+        }
+  
+        let location = await Location.getCurrentPositionAsync({});
+        setLocation(location);
+      }
+  
+      getCurrentLocation();
+    }, []);
 
   return (
     <>
@@ -73,9 +90,9 @@ const SiteDetails = () => {
             <Pressable
               onPressIn={() => (scale.value = withSpring(0.9, { damping: 5, stiffness: 150 }))}
               onPressOut={() => (scale.value = withSpring(1, { damping: 5, stiffness: 150 }))}
-              // onPress={() =>
-              //   router.push({ pathname: '/(drawer)/(tabs)/(TouristMap)/VideoScreen' })
-              // }
+              onPress={() =>
+                router.push({ pathname: '/(drawer)/(tabs)/(tour)/VideoScreen' })
+              }
             >
               <Animated.View
                 className="w-1/5 justify-center rounded-2xl border-amber-400 "
@@ -96,7 +113,7 @@ const SiteDetails = () => {
                 </View>
               </Animated.View>
             </Pressable>
-            <MapLottieButton pathDist="/(drawer)/(tabs)/(tour)/SiteCategory" itemData={params} />
+            <MapLottieButton pathDist="/(drawer)/(tabs)/(tour)/SiteCategory" itemData={params} ownLocation={location} />
           </View>
         </View>
       </View>

@@ -94,7 +94,7 @@ const SiteCategory = () => {
   //   const deltaSeconds = (frameInfo.timeSincePreviousFrame ?? 0) / 1000;
   // //  console.log('deltaSeconds', deltaSeconds)
   // });
-console.log('location', location);
+console.log('location33', params);
   return (
     <View style={{ flex: 1 }}>
       {/* <View style={{backgroundColor:'red', width, height:height*.15}}></View> */}
@@ -102,14 +102,34 @@ console.log('location', location);
           apikey={"AIzaSyD2vd0xYzrKHixVMCqIWSvIJgQwrcqI9IE"}
         style={{ height: '100%', width: '100%' }}
         initialRegion={{
-          longitude: 121.36279850956352,
-          latitude: 14.534941949811,
+          longitude: 120.85530584743636,
+          latitude: 14.326238663351061,
           latitudeDelta: 0.0031,
           longitudeDelta: 0.0031,
         }}>
+           <Marker
+      // key={index}
+      coordinate={{ longitude: 120.85530584743636,
+          latitude: 14.326238663351061,}}
+      title={"Reserve Commands, PA"}
+      description={"tester"}
+    />
+ 
 
-
-          
+           {/* <Marker coordinate={location} title="Tourist" description="Current Location">
+            <View>
+              <LottieView
+                autoPlay
+                ref={animation}
+                style={{
+                  width: 80,
+                  height: 50,
+                  top: 15,
+                }}
+                source={require('../../../../assets/lottie/BallWalking.json')}
+              />
+            </View>
+          </Marker> */}
         {/* {location ? (
           <Marker coordinate={location} title="Tourist" description="Current Location">
             <View>
@@ -201,11 +221,11 @@ console.log('location', location);
         onChange={handleSheetChange}>
         <View className="flex-row" style={{ paddingLeft: 10 }}>
           <Text>Distance: </Text>
-          <Text style={{ paddingLeft: 10 }}>500 Meters</Text>
+          <Text style={{ paddingLeft: 10 }}>-- Meters</Text>
         </View>
         <View className="mt-1 flex-row" style={{ paddingLeft: 10 }}>
           <Text>Destination: </Text>
-          <Text style={{ paddingLeft: 10 }}>FIRING RANGE</Text>
+          <Text style={{ paddingLeft: 10 }}>{params.title}</Text>
         </View>
 
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
