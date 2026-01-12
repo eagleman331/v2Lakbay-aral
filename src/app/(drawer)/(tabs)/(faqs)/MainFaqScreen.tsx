@@ -62,17 +62,16 @@ const MainFaqScreen = () => {
         </View>
         <View className="h-6" />
         <View
-                    style={{
-                      marginLeft: 10,
-                      height: 1.3,
-                      backgroundColor: Colors.white,
-                      width: width * 0.7,
-                      alignSelf: 'baseline',
-                    }}
-                  />
+          style={{
+            marginLeft: 10,
+            height: 1.3,
+            backgroundColor: Colors.white,
+            width: width * 0.7,
+            alignSelf: 'baseline',
+          }}
+        />
         <View className="items-center">
-   {FaqsData.map((item, index) => {
-
+          {FaqsData.map((item, index) => {
             return <FaqsList item={item} key={index} />;
           })}
         </View>

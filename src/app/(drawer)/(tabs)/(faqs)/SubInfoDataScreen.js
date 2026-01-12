@@ -49,9 +49,7 @@ const SubInfoDataScreen = () => {
         <View>
             <Text className="px-2 py-2 text-2xl font-semibold italic">Question</Text>
             <Text className="p-2 text-justify text-lg">{question}</Text>
-             
           </View>
-
              <View
                     style={{
                       marginTop: 2, marginLeft: 10,
@@ -64,7 +62,6 @@ const SubInfoDataScreen = () => {
           <View>
             <Text className="px-2 py-2 text-2xl font-semibold italic">Answer</Text>
             <Text className="p-2 text-justify text-lg">{answer}</Text>
-          
           </View>
              <View
                     style={{
@@ -87,10 +84,8 @@ const SubInfoDataScreen = () => {
                 </View>
               );
             })}
-           
-
-          </View>
-             <View
+          </View> */}
+             {/* <View
                     style={{
                       marginTop: 2, marginLeft: 10,
                       height: 1.3,

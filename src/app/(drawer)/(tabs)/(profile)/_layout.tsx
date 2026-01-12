@@ -5,7 +5,6 @@ export default function StackLayout() {
     <Stack>
              <Stack.Screen name="ProfileScreen" options={{ headerShown: false }} />
              <Stack.Screen name="UpdateProfile" options={{ headerShown: false }} />
-
     </Stack>
   );
 }
