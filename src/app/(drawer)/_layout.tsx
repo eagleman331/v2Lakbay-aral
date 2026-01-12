@@ -41,11 +41,34 @@ const CustomDrawerContent = (props) => {
         <TouchableOpacity
           className="flex-row"
           style={{ paddingLeft: 15, marginTop: 15 }}
-          onPress={() => router.push({ pathname: '/(drawer)/(tabs)/(rotc)/RotcSchoolScreen' })}
-        >
-          <AntDesign name="home" size={24} color={Colors.darkGreen} />
+          onPress={() => router.push({ pathname: '/(drawer)/(tabs)/(profile)/ProfileScreen' })}>
+          <AntDesign name="profile" size={24} color={Colors.darkGreen} />
 
-          <Text style={{ paddingLeft: 10, alignSelf: 'center' }}>Home</Text>
+          <Text style={{ paddingLeft: 10, alignSelf: 'center' }}>User Profile</Text>
+        </TouchableOpacity>
+
+        <View
+          style={{
+            height: 0.5,
+            backgroundColor: 'black',
+
+            alignSelf: 'left',
+          }}
+        />
+        <View
+          style={{
+            height: 0.5,
+            backgroundColor: 'black',
+            marginTop: 10,
+            alignSelf: 'left',
+          }}
+        />
+        <TouchableOpacity
+          className="flex-row"
+          style={{ paddingLeft: 15, marginTop: 15 }}
+          onPress={() => router.push({ pathname: '/(drawer)/(tabs)/(exercise)/ExerciseScreen' })}>
+          <Entypo name="baidu" size={24} color={Colors.darkGreen} />
+          <Text style={{ paddingLeft: 10, alignSelf: 'center' }}>Exercise</Text>
         </TouchableOpacity>
         <View
           style={{
@@ -58,12 +81,11 @@ const CustomDrawerContent = (props) => {
         <TouchableOpacity
           className="flex-row"
           style={{ paddingLeft: 15, marginTop: 15 }}
-          onPress={() => router.push({ pathname: '/(drawer)/(tabs)/(Commander)/CommScreen' })}
-        >
+          onPress={() => router.push({ pathname: '/(drawer)/(tabs)/(commander)/CommScreen' })}>
           <FontAwesome6 name="person-military-rifle" size={24} color={Colors.darkGreen} />
           <Text style={{ paddingLeft: 10, alignSelf: 'center' }}>Commander</Text>
         </TouchableOpacity>
-        {/* <Divider inset={true} insetType="right" width={1} color="black" style={{ marginTop: 10 }} /> */}
+    
         <View
           style={{
             height: 0.5,
@@ -72,6 +94,13 @@ const CustomDrawerContent = (props) => {
             alignSelf: 'left',
           }}
         />
+         <TouchableOpacity
+          className="flex-row"
+          style={{ paddingLeft: 15, marginTop: 15 }}
+          onPress={() => router.push({ pathname: '/(drawer)/(tabs)/(rotc)/RotcSchoolScreen' })}>
+          <AntDesign name="database" size={24} color={Colors.darkGreen} />
+          <Text style={{ paddingLeft: 10, alignSelf: 'center' }}>ROTC</Text>
+        </TouchableOpacity>
 
         {/* <TouchableOpacity
           className="flex-row"
@@ -110,8 +139,7 @@ const CustomDrawerContent = (props) => {
 export default function DrawerLayout() {
   return (
     <Drawer drawerContent={CustomDrawerContent}>
-
-       <Drawer.Screen
+      <Drawer.Screen
         name="loginScreen"
         options={{
           headerTitle: 'Login',
@@ -122,7 +150,7 @@ export default function DrawerLayout() {
           ),
         }}
       />
-            <Drawer.Screen
+      <Drawer.Screen
         name="(tabs)" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Home',

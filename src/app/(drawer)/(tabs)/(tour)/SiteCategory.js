@@ -220,8 +220,8 @@ console.log('location33', params);
         }}
         onChange={handleSheetChange}>
         <View className="flex-row" style={{ paddingLeft: 10 }}>
-          <Text>Distance: </Text>
-          <Text style={{ paddingLeft: 10 }}>-- Meters</Text>
+          <Text>Map use: </Text>
+          <Text style={{ paddingLeft: 10 }}>Google Maps</Text>
         </View>
         <View className="mt-1 flex-row" style={{ paddingLeft: 10 }}>
           <Text>Destination: </Text>

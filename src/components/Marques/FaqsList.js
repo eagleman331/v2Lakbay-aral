@@ -15,8 +15,6 @@ const FaqsList = ({ index, item }) => {
       }>
       <View className="mt-2 p-2" style={{ width: width * 0.95, borderRadius: 10, backgroundColor: Colors.goldYellow }}>
         <Text className="p-3 text-lg font-semibold ">{item.question}</Text>
-
-        {/* <Divider width={1} color="white" /> */}
       </View>
     </TouchableOpacity>
   );

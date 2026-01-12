@@ -1,8 +1,5 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-
-
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Entypo from '@expo/vector-icons/Entypo';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
@@ -14,7 +11,7 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
       }}>
-     <Tabs.Screen
+      <Tabs.Screen
         name="(tour)"
         options={{
           title: 'Home',
@@ -25,16 +22,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="(rotc)"
+        name="(faqs)"
         options={{
-          title: 'ROTC',
+          title: 'FAQs',
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <FontAwesome6 name="person-military-rifle" size={26} color={Colors.darkGreen} />
           ),
         }}
       />
-          <Tabs.Screen name="(Commander)" options={{ href: null, headerShown: false }} />
+      <Tabs.Screen name="(commander)" options={{ href: null, headerShown: false }} />
+      <Tabs.Screen name="(exercise)" options={{ href: null, headerShown: false }} />
+      <Tabs.Screen name="(profile)" options={{ href: null, headerShown: false }} />
+      <Tabs.Screen name="(rotc)" options={{ href: null, headerShown: false }} />
     </Tabs>
   );
 }
