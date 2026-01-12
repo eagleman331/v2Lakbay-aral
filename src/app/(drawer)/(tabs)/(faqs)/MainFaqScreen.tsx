@@ -49,7 +49,6 @@ const MainFaqScreen = () => {
   //   console.log('No data');
   // }, []);
 
-  console.log('Faq Data', FaqsData);
   return (
     <View style={{ flex: 1, backgroundColor: Colors.darkGreen }}>
       {/* <Image

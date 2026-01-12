@@ -46,15 +46,6 @@ const CustomDrawerContent = (props) => {
 
           <Text style={{ paddingLeft: 10, alignSelf: 'center' }}>User Profile</Text>
         </TouchableOpacity>
-
-        <View
-          style={{
-            height: 0.5,
-            backgroundColor: 'black',
-
-            alignSelf: 'left',
-          }}
-        />
         <View
           style={{
             height: 0.5,

@@ -51,7 +51,7 @@
       "tsconfigPaths": true
     },
     "orientation": "portrait",
-    "icon": "./src/assets/lakbay-aralIcon.png",
+    "icon": "./src/assets/lakbayAral2.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/assets/splash.png",
@@ -72,7 +72,7 @@
         "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
       ],
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/lakbay-aralIcon.png",
+        "foregroundImage": "./src/assets/lakbayAral2.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.eagleman33.lakbayaral",
