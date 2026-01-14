@@ -52,7 +52,7 @@ const ExerciseScreen = () => {
     }
 
     router.push({
-      pathname: '/(drawer)/(tabs)/(Exercise)/PftViewer',
+      pathname: '/(drawer)/(tabs)/(exercise)/PftViewer',
       params: { PftData: JSON.stringify(SampleData) },
     });
   };

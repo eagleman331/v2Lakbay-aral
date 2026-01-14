@@ -149,6 +149,7 @@ export default function DrawerLayout() {
           headerShown: false,
         }}
       />
+       <Drawer.Screen name="paywallScreen" options={{ headerShown: false }} />
     </Drawer>
   );
 }

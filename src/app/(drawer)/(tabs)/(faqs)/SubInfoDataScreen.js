@@ -98,10 +98,10 @@ const SubInfoDataScreen = () => {
             <Text className="px-2 py-2 text-2xl font-semibold italic">Social Media</Text>
             <TouchableOpacity
               onPress={() => {
-                WebBrowser.openBrowserAsync('https://www.facebook.com/junglefighterdivision');
+                WebBrowser.openBrowserAsync('https://www.facebook.com/harescom');
               }}>
               <View className="mt-2 flex-row p-2">
-                <Text className="w-10/12 text-lg font-semibold">Check the 2ID Facebook Page</Text>
+                <Text className="w-10/12 text-lg font-semibold">Check the RESCOM Facebook Page</Text>
                 <View className="w-2/12 items-center justify-center ">
                   <AntDesign name="arrow-right" size={24} color="black" />
                 </View>
@@ -111,7 +111,7 @@ const SubInfoDataScreen = () => {
 
             <TouchableOpacity
               onPress={() =>
-                WebBrowser.openBrowserAsync('https://www.youtube.com/@2idjunglefighter')
+                WebBrowser.openBrowserAsync('https://www.youtube.com/watch?v=yPI4IlUt2ss')
               }>
               <View className="mt-2 flex-row p-2">
                 <Text className="w-10/12 text-lg font-semibold italic">
