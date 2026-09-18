@@ -14,7 +14,7 @@
       "favicon": "./src/assets/favicon.png"
     },
     "plugins": [
-       [
+      [
         "expo-video",
         {
           "supportsBackgroundPlayback": true,
@@ -30,7 +30,9 @@
             "buildToolsVersion": "35.0.0"
           },
           "ios": {
-            "deploymentTarget": "15.1"
+            "deploymentTarget": "15.1",
+             "useFrameworks": "static",
+            "buildReactNativeFromSource": true
           }
         }
       ],
@@ -64,7 +66,10 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.eagleman33.lakbayaral",
-      "googleServicesFile": "./GoogleService-Info.plist"
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "googleServicesFile": "./google-services.json",
@@ -80,7 +85,11 @@
         "googleMaps": {
           "apiKey": "AIzaSyAql_lhkfFzAyHoXJ1lvXjrjzlREj4v17c"
         }
-      }
+      },
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
     },
     "extra": {
       "router": {},
